@@ -1,0 +1,15 @@
+DESCRIPTION="Extracts Nero .nrg image file to .iso"
+HOMEPAGE="http://code.google.com/p/nrg4iso/"
+SRC_URI="http://${PN}.googlecode.com/files/${P}.tgz"
+SRC_DIR="${PN}"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cygmake
+}
+
+src_install() {
+	cd ${B}
+	dobin nrg4iso.exe
+}
